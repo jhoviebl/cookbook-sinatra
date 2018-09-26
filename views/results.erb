@@ -1,0 +1,12 @@
+<table class='table table-hover table-striped'>
+  <% @foods.each do |food| %>
+    <tr>
+      <th><%= food.food_name %></th>
+      <th><%= food.food_code %></th>
+      <td><%= food.vote_amount || 0 %>
+      <td><%= '#' * (food.vote_amount || 0) %></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
+<p><a href='/'>Cast more votes!</a></p>
