@@ -1,0 +1,18 @@
+
+  <table class='table table-hover table-striped'>
+  <% @foods.each do |food| %>
+    <tr>
+      <th><%= food.food_name %></th>
+      <th><%= food.food_code %></th>
+      <td><%= food.vote_amount || 0 %>
+      <td><%= '#' * (food.vote_amount || 0) %></td>
+      <form action="/remove/<%=food.id%>" method="post">
+      <td><input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete"></td>
+      </form>
+      <td></td>
+    </tr>
+  <% end %>
+  </table>
+
+
